@@ -2,7 +2,7 @@
 
 namespace ZnYii\Web\Actions;
 
-use ZnYii\Web\Widgets\Toastr\Alert;
+use ZnYii\Web\Widgets\Toastr\Toastr;
 
 class DeleteAction extends BaseAction
 {
@@ -36,9 +36,9 @@ class DeleteAction extends BaseAction
     {
         try {
             $this->service->deleteById($id);
-            Alert::create($this->getSuccessMessage(), Alert::TYPE_SUCCESS);
+            Toastr::create($this->getSuccessMessage(), Toastr::TYPE_SUCCESS);
         } catch (\DomainException $e) {
-            Alert::create($e->getMessage(), Alert::TYPE_WARNING);
+            Toastr::create($e->getMessage(), Toastr::TYPE_WARNING);
         }
         return $this->redirect($this->successRedirectUrl);
     }

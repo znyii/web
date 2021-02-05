@@ -4,7 +4,7 @@ namespace ZnYii\Web\Actions;
 
 use Illuminate\Container\Container;
 use ZnCore\Domain\Exceptions\UnprocessibleEntityException;
-use ZnYii\Web\Widgets\Toastr\Alert;
+use ZnYii\Web\Widgets\Toastr\Toastr;
 use Yii;
 use ZnYii\Base\Forms\BaseForm;
 use ZnYii\Base\Helpers\FormHelper;
@@ -23,14 +23,14 @@ class CreateAction extends BaseFormAction
             FormHelper::setAttributes($model, $postData);
             try {
                 $this->service->create(FormHelper::extractAttributesForEntity($model, $this->entityClass));
-                Alert::create($this->getSuccessMessage(), Alert::TYPE_SUCCESS);
+                Toastr::create($this->getSuccessMessage(), Toastr::TYPE_SUCCESS);
                 return $this->redirect($this->successRedirectUrl);
             } catch (UnprocessibleEntityException $e) {
                 $errors = FormHelper::setErrorsToModel($model, $e->getErrorCollection());
                 $errorMessage = implode('<br/>', $errors);
-                Alert::create($errorMessage, Alert::TYPE_WARNING);
+                Toastr::create($errorMessage, Toastr::TYPE_WARNING);
             } catch (\DomainException $e) {
-                Alert::create($e->getMessage(), Alert::TYPE_WARNING);
+                Toastr::create($e->getMessage(), Toastr::TYPE_WARNING);
             }
         }
         return $this->render('create', [

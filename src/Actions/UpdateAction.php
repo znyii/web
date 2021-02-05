@@ -8,7 +8,7 @@ use ZnCore\Domain\Exceptions\UnprocessibleEntityException;
 use ZnCore\Domain\Helpers\EntityHelper;
 use ZnCore\Domain\Interfaces\Entity\EntityIdInterface;
 use ZnCore\Domain\Libs\Query;
-use ZnYii\Web\Widgets\Toastr\Alert;
+use ZnYii\Web\Widgets\Toastr\Toastr;
 use Yii;
 use ZnYii\Base\Forms\BaseForm;
 use ZnYii\Base\Helpers\FormHelper;
@@ -28,14 +28,14 @@ class UpdateAction extends BaseFormAction
             FormHelper::setAttributes($model, $postData);
             try {
                 $this->service->updateById($id, FormHelper::extractAttributesForEntity($model, $this->entityClass));
-                Alert::create($this->getSuccessMessage(), Alert::TYPE_SUCCESS);
+                Toastr::create($this->getSuccessMessage(), Toastr::TYPE_SUCCESS);
                 return $this->redirect($this->successRedirectUrl);
             } catch (UnprocessibleEntityException $e) {
                 $errors = FormHelper::setErrorsToModel($model, $e->getErrorCollection());
                 $errorMessage = implode('<br/>', $errors);
-                Alert::create($errorMessage, Alert::TYPE_WARNING);
+                Toastr::create($errorMessage, Toastr::TYPE_WARNING);
             } catch (\DomainException $e) {
-                Alert::create($e->getMessage(), Alert::TYPE_WARNING);
+                Toastr::create($e->getMessage(), Toastr::TYPE_WARNING);
             }
         } else {
             $data = EntityHelper::toArrayForTablize($entity);

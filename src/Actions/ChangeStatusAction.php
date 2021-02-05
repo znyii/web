@@ -6,7 +6,7 @@ use yii\helpers\Url;
 use Yii;
 use ZnCore\Domain\Interfaces\Entity\EntityIdInterface;
 use ZnCore\Domain\Libs\Query;
-use ZnYii\Web\Widgets\Toastr\Alert;
+use ZnYii\Web\Widgets\Toastr\Toastr;
 
 class ChangeStatusAction extends BaseAction
 {
@@ -40,7 +40,7 @@ class ChangeStatusAction extends BaseAction
     public function run(int $id)
     {
         $this->service->changeStatusById($id, $this->statusId);
-        Alert::create($this->getSuccessMessage(), Alert::TYPE_SUCCESS);
+        Toastr::create($this->getSuccessMessage(), Toastr::TYPE_SUCCESS);
         return $this->redirect($this->successRedirectUrl);
     }
 }

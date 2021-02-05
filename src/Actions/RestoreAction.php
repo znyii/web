@@ -6,7 +6,7 @@ use yii\helpers\Url;
 use Yii;
 use ZnCore\Domain\Interfaces\Entity\EntityIdInterface;
 use ZnCore\Domain\Libs\Query;
-use ZnYii\Web\Widgets\Toastr\Alert;
+use ZnYii\Web\Widgets\Toastr\Toastr;
 
 class RestoreAction extends BaseAction
 {
@@ -40,9 +40,9 @@ class RestoreAction extends BaseAction
     {
         try {
             $this->service->restoreById($id);
-            Alert::create($this->getSuccessMessage(), Alert::TYPE_SUCCESS);
+            Toastr::create($this->getSuccessMessage(), Toastr::TYPE_SUCCESS);
         } catch (\DomainException $e) {
-            Alert::create($e->getMessage(), Alert::TYPE_WARNING);
+            Toastr::create($e->getMessage(), Toastr::TYPE_WARNING);
         }
         return $this->redirect($this->successRedirectUrl);
     }
