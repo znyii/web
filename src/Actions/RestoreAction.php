@@ -2,11 +2,7 @@
 
 namespace ZnYii\Web\Actions;
 
-use yii\helpers\Url;
-use Yii;
-use ZnCore\Domain\Interfaces\Entity\EntityIdInterface;
-use ZnCore\Domain\Libs\Query;
-use ZnYii\Web\Widgets\Toastr\Toastr;
+use ZnBundle\Notify\Domain\Interfaces\Services\ToastrServiceInterface;
 
 class RestoreAction extends BaseAction
 {
@@ -15,6 +11,18 @@ class RestoreAction extends BaseAction
     private $successMessage;
     private $successMessageKey = 'restore_success';
     private $successRedirectUrl;
+
+    private $toastrService;
+
+    public function __construct(
+        $id, $controller,
+        ToastrServiceInterface $toastrService,
+        $config = []
+    )
+    {
+        parent::__construct($id, $controller, $config);
+        $this->toastrService = $toastrService;
+    }
 
     public function setWith(array $with)
     {
@@ -40,9 +48,9 @@ class RestoreAction extends BaseAction
     {
         try {
             $this->service->restoreById($id);
-            Toastr::create($this->getSuccessMessage(), Toastr::TYPE_SUCCESS);
+            $this->toastrService->success($this->getSuccessMessage());
         } catch (\DomainException $e) {
-            Toastr::create($e->getMessage(), Toastr::TYPE_WARNING);
+            $this->toastrService->warning($e->getMessage());
         }
         return $this->redirect($this->successRedirectUrl);
     }

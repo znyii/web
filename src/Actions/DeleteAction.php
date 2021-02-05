@@ -2,7 +2,7 @@
 
 namespace ZnYii\Web\Actions;
 
-use ZnYii\Web\Widgets\Toastr\Toastr;
+use ZnBundle\Notify\Domain\Interfaces\Services\ToastrServiceInterface;
 
 class DeleteAction extends BaseAction
 {
@@ -11,6 +11,18 @@ class DeleteAction extends BaseAction
     private $successMessage;
     private $successMessageKey = 'delete_success';
     private $successRedirectUrl;
+
+    private $toastrService;
+
+    public function __construct(
+        $id, $controller,
+        ToastrServiceInterface $toastrService,
+        $config = []
+    )
+    {
+        parent::__construct($id, $controller, $config);
+        $this->toastrService = $toastrService;
+    }
 
     public function setWith(array $with)
     {
@@ -36,9 +48,9 @@ class DeleteAction extends BaseAction
     {
         try {
             $this->service->deleteById($id);
-            Toastr::create($this->getSuccessMessage(), Toastr::TYPE_SUCCESS);
+            $this->toastrService->success($this->getSuccessMessage());
         } catch (\DomainException $e) {
-            Toastr::create($e->getMessage(), Toastr::TYPE_WARNING);
+            $this->toastrService->warning($e->getMessage());
         }
         return $this->redirect($this->successRedirectUrl);
     }

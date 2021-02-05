@@ -2,11 +2,7 @@
 
 namespace ZnYii\Web\Actions;
 
-use yii\helpers\Url;
-use Yii;
-use ZnCore\Domain\Interfaces\Entity\EntityIdInterface;
-use ZnCore\Domain\Libs\Query;
-use ZnYii\Web\Widgets\Toastr\Toastr;
+use ZnBundle\Notify\Domain\Interfaces\Services\ToastrServiceInterface;
 
 class ChangeStatusAction extends BaseAction
 {
@@ -16,6 +12,18 @@ class ChangeStatusAction extends BaseAction
     private $successMessageKey = 'change_status_success';
     private $successRedirectUrl;
     private $statusId;
+
+    private $toastrService;
+
+    public function __construct(
+        $id, $controller,
+        ToastrServiceInterface $toastrService,
+        $config = []
+    )
+    {
+        parent::__construct($id, $controller, $config);
+        $this->toastrService = $toastrService;
+    }
 
     public function setWith(array $with)
     {
@@ -40,7 +48,7 @@ class ChangeStatusAction extends BaseAction
     public function run(int $id)
     {
         $this->service->changeStatusById($id, $this->statusId);
-        Toastr::create($this->getSuccessMessage(), Toastr::TYPE_SUCCESS);
+        $this->toastrService->success($this->getSuccessMessage());
         return $this->redirect($this->successRedirectUrl);
     }
 }
