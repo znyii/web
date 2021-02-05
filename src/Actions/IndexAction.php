@@ -47,7 +47,6 @@ class IndexAction extends BaseAction
 //            $filterAttributes = QueryHelper::getFilterParams($query);
         $filterAttributes = $filterAttributes ? $this->removeEmptyParameters($filterAttributes) : [];
         $filterModel = EntityHelper::createEntity($this->filterModel, $filterAttributes);
-//        dd($filterModel);
         try {
             ValidationHelper::validateEntity($filterModel);
         } catch (UnprocessibleEntityException $e) {
