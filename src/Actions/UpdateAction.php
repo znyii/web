@@ -9,6 +9,7 @@ use ZnCore\Domain\Exceptions\UnprocessibleEntityException;
 use ZnCore\Domain\Helpers\EntityHelper;
 use ZnCore\Domain\Interfaces\Entity\EntityIdInterface;
 use ZnCore\Domain\Libs\Query;
+use ZnYii\Base\Enums\ScenarionEnum;
 use ZnYii\Base\Forms\BaseForm;
 use ZnYii\Base\Helpers\FormHelper;
 use ZnYii\Base\Helpers\UnprocessibleErrorHelper;
@@ -34,7 +35,7 @@ class UpdateAction extends BaseFormAction
 //        $this->runCallback();
         /** @var BaseForm $model */
         //$model = Container::getInstance()->get($this->formClass);
-        $model = FormHelper::createFormByClass($this->formClass);
+        $model = FormHelper::createFormByClass($this->formClass, ScenarionEnum::UPDATE);
         if (Yii::$app->request->isPost) {
             $postData = Yii::$app->request->post($model->formName());
             FormHelper::setAttributes($model, $postData);

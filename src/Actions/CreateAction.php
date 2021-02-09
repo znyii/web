@@ -6,6 +6,7 @@ use Illuminate\Container\Container;
 use Yii;
 use ZnBundle\Notify\Domain\Interfaces\Services\ToastrServiceInterface;
 use ZnCore\Domain\Exceptions\UnprocessibleEntityException;
+use ZnYii\Base\Enums\ScenarionEnum;
 use ZnYii\Base\Forms\BaseForm;
 use ZnYii\Base\Helpers\FormHelper;
 use ZnYii\Base\Helpers\UnprocessibleErrorHelper;
@@ -30,7 +31,7 @@ class CreateAction extends BaseFormAction
         $this->runCallback();
         /** @var BaseForm $model */
 //        $model = Container::getInstance()->get($this->formClass);
-        $model = FormHelper::createFormByClass($this->formClass);
+        $model = FormHelper::createFormByClass($this->formClass, ScenarionEnum::CREATE);
         if (Yii::$app->request->isPost) {
             $postData = Yii::$app->request->post($model->formName());
             FormHelper::setAttributes($model, $postData);
