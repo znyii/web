@@ -33,7 +33,8 @@ class UpdateAction extends BaseFormAction
         $entity = $this->readOne($id);
 //        $this->runCallback();
         /** @var BaseForm $model */
-        $model = Container::getInstance()->get($this->formClass);
+        //$model = Container::getInstance()->get($this->formClass);
+        $model = FormHelper::createFormByClass($this->formClass);
         if (Yii::$app->request->isPost) {
             $postData = Yii::$app->request->post($model->formName());
             FormHelper::setAttributes($model, $postData);
