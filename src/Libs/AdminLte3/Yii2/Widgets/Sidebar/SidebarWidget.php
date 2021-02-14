@@ -2,7 +2,7 @@
 
 namespace ZnYii\Web\Libs\AdminLte3\Yii2\Widgets\Sidebar;
 
-use Packages\Layout\Domain\Interfaces\Services\MenuServiceInterface;
+use ZnSandbox\Sandbox\Layout\Domain\Interfaces\Services\MenuServiceInterface;
 use ZnCore\Domain\Helpers\EntityHelper;
 use ZnLib\Web\Widgets\Base\BaseWidget2;
 use ZnLib\Web\Widgets\NavbarMenuWidget;
