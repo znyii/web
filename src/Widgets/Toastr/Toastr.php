@@ -4,14 +4,13 @@ namespace ZnYii\Web\Widgets\Toastr;
 
 use Illuminate\Support\Collection;
 use Symfony\Component\PropertyAccess\PropertyAccess;
-//use yii\base\Widget;
+use yii\base\Widget;
 use ZnBundle\Notify\Domain\Interfaces\Services\ToastrServiceInterface;
 use ZnCore\Base\Helpers\ClassHelper;
 use ZnCore\Base\Libs\App\Helpers\ContainerHelper;
 use ZnCore\Base\Libs\I18Next\Facades\I18Next;
-use ZnLib\Web\Widgets\Base\BaseWidget2;
 
-class Toastr extends BaseWidget2
+class Toastr extends Widget
 {
 
     /**
@@ -45,15 +44,16 @@ class Toastr extends BaseWidget2
 
     private $toastrService;
 
-    public function __construct(ToastrServiceInterface $toastrService)
+    public function __construct(ToastrServiceInterface $toastrService, $config = [])
     {
+        parent::__construct($config);
         $this->toastrService = $toastrService;
     }
 
     /**
      * Runs the widget
      */
-    public function run(): string
+    public function run()
     {
         $collection = $this->toastrService->all();
         $this->generateHtml($collection);
