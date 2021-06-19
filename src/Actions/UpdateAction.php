@@ -5,6 +5,7 @@ namespace ZnYii\Web\Actions;
 use Illuminate\Container\Container;
 use Yii;
 use ZnBundle\Notify\Domain\Interfaces\Services\ToastrServiceInterface;
+use ZnCore\Base\Legacy\Yii\Helpers\ArrayHelper;
 use ZnCore\Domain\Exceptions\UnprocessibleEntityException;
 use ZnCore\Domain\Helpers\EntityHelper;
 use ZnCore\Domain\Interfaces\Entity\EntityIdInterface;
@@ -52,6 +53,7 @@ class UpdateAction extends BaseFormAction
             }
         } else {
             $data = EntityHelper::toArrayForTablize($entity);
+            $data = ArrayHelper::merge($data, EntityHelper::toArray($entity));
             FormHelper::setAttributes($model, $data);
         }
         return $this->render('update', [
