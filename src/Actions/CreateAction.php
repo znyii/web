@@ -36,7 +36,12 @@ class CreateAction extends BaseFormAction
             $postData = Yii::$app->request->post($model->formName());
             FormHelper::setAttributes($model, $postData);
             try {
-                $this->service->create(FormHelper::extractAttributesForEntity($model, $this->entityClass));
+                if ($this->entityClass) {
+                    $data = FormHelper::extractAttributesForEntity($model, $this->entityClass);
+                } else {
+                    $data = $postData;
+                }
+                $this->service->create($data);
                 $this->toastrService->success($this->getSuccessMessage());
                 return $this->redirect($this->successRedirectUrl);
             } catch (UnprocessibleEntityException $e) {
