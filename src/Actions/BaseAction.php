@@ -5,16 +5,17 @@ namespace ZnYii\Web\Actions;
 use yii\base\Action;
 use Yii;
 use ZnCore\Domain\Interfaces\Service\CrudServiceInterface;
+use ZnCore\Domain\Interfaces\Service\ServiceInterface;
 
 abstract class BaseAction extends Action
 {
 
-    /** @var CrudServiceInterface */
+    /** @var CrudServiceInterface | ServiceInterface */
     protected $service;
     protected $callback;
     protected $i18NextConfig;
 
-    public function setService(CrudServiceInterface $service): void
+    public function setService(ServiceInterface $service): void
     {
         $this->service = $service;
     }
