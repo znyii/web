@@ -7,7 +7,7 @@ use Symfony\Component\PropertyAccess\PropertyAccess;
 use yii\base\Widget;
 use ZnBundle\Notify\Domain\Interfaces\Services\ToastrServiceInterface;
 use ZnCore\Base\Helpers\ClassHelper;
-use ZnCore\Base\Libs\App\Helpers\ContainerHelper;
+use ZnCore\Base\Libs\Container\Helpers\ContainerHelper;
 use ZnCore\Base\Libs\I18Next\Facades\I18Next;
 
 class Toastr extends Widget
