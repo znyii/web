@@ -2,10 +2,10 @@
 
 namespace ZnYii\Web\Actions;
 
-use yii\base\Action;
 use Yii;
-use ZnCore\Domain\Interfaces\Service\CrudServiceInterface;
-use ZnCore\Domain\Interfaces\Service\ServiceInterface;
+use yii\base\Action;
+use ZnCore\Base\Libs\Service\Interfaces\ServiceInterface;
+use ZnCore\Base\Libs\Service\Interfaces\CrudServiceInterface;
 
 abstract class BaseAction extends Action
 {
@@ -49,7 +49,8 @@ abstract class BaseAction extends Action
         return $this->controller->render($this->controller->baseViewAlias . $view, $params);
     }
 
-    protected function redirect($url, $statusCode = 302) {
+    protected function redirect($url, $statusCode = 302)
+    {
         return $this->controller->redirect($url, $statusCode = 302);
     }
 }
