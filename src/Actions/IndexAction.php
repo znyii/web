@@ -7,9 +7,10 @@ use yii\web\BadRequestHttpException;
 use ZnCore\Base\Legacy\Yii\Helpers\ArrayHelper;
 use ZnCore\Base\Libs\Validation\Exceptions\UnprocessibleEntityException;
 use ZnCore\Base\Libs\Entity\Helpers\EntityHelper;
-use ZnCore\Domain\Helpers\QueryHelper;
+use ZnCore\Base\Libs\Query\Helpers\QueryHelper;
 use ZnCore\Base\Libs\Validation\Helpers\ValidationHelper;
-use ZnCore\Domain\Libs\Query;
+use ZnCore\Base\Libs\Query\Entities\Query;
+use ZnLib\Web\Helpers\WebQueryHelper;
 
 class IndexAction extends BaseAction
 {
@@ -61,7 +62,7 @@ class IndexAction extends BaseAction
     }
 
     private function forgeQueryFromRequest(): Query {
-        $query = QueryHelper::getAllParams(Yii::$app->request->get());
+        $query = WebQueryHelper::getAllParams(Yii::$app->request->get());
         $query->removeParam(Query::WHERE);
         $query->removeParam(Query::WHERE_NEW);
         if(Yii::$app->request->get('per-page') == null) {
