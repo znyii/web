@@ -5,7 +5,7 @@ namespace ZnYii\Web\Actions;
 use Illuminate\Container\Container;
 use Yii;
 use ZnBundle\Notify\Domain\Interfaces\Services\ToastrServiceInterface;
-use ZnCore\Domain\Exceptions\UnprocessibleEntityException;
+use ZnCore\Base\Libs\Validation\Exceptions\UnprocessibleEntityException;
 use ZnYii\Base\Enums\ScenarionEnum;
 use ZnYii\Base\Forms\BaseForm;
 use ZnYii\Base\Helpers\FormHelper;
