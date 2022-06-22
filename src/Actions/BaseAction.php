@@ -4,8 +4,8 @@ namespace ZnYii\Web\Actions;
 
 use Yii;
 use yii\base\Action;
-use ZnCore\Base\Libs\Service\Interfaces\ServiceInterface;
-use ZnCore\Base\Libs\Service\Interfaces\CrudServiceInterface;
+use ZnCore\Domain\Service\Interfaces\ServiceInterface;
+use ZnCore\Domain\Service\Interfaces\CrudServiceInterface;
 
 abstract class BaseAction extends Action
 {
