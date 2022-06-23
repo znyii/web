@@ -2,7 +2,7 @@
 
 namespace ZnYii\Web\Libs\AdminLte3;
 
-use ZnCore\Base\Libs\App\Base\BaseBundle;
+use ZnCore\Base\App\Base\BaseBundle;
 
 class Bundle extends BaseBundle
 {
