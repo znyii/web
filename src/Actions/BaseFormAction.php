@@ -5,7 +5,7 @@ namespace ZnYii\Web\Actions;
 use Illuminate\Container\Container;
 use Illuminate\Support\Collection;
 use yii\base\Model;
-use ZnCore\Base\Helpers\ClassHelper;
+use ZnCore\Base\Libs\Instance\Helpers\ClassHelper;
 use ZnCore\Base\Legacy\Yii\Helpers\ArrayHelper;
 use ZnCore\Base\Legacy\Yii\Helpers\Inflector;
 use ZnCore\Domain\Entity\Helpers\EntityHelper;
