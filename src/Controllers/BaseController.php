@@ -4,7 +4,7 @@ namespace ZnYii\Web\Controllers;
 
 use yii\helpers\Url;
 use yii\web\Controller;
-use ZnCore\Base\I18Next\Facades\I18Next;
+use ZnLib\Components\I18Next\Facades\I18Next;
 use ZnCore\Domain\Interfaces\Entity\EntityIdInterface;
 use ZnCore\Domain\Service\Interfaces\CrudServiceInterface;
 use ZnLib\Web\Widgets\BreadcrumbWidget;
