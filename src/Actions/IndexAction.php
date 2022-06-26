@@ -10,7 +10,7 @@ use ZnCore\Domain\Entity\Helpers\EntityHelper;
 use ZnCore\Domain\Query\Helpers\QueryHelper;
 use ZnCore\Base\Validation\Helpers\ValidationHelper;
 use ZnCore\Domain\Query\Entities\Query;
-use ZnLib\Web\Helpers\WebQueryHelper;
+use ZnLib\Web\Components\Controller\Helpers\WebQueryHelper;
 
 class IndexAction extends BaseAction
 {
