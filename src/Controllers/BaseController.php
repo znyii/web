@@ -7,7 +7,7 @@ use yii\web\Controller;
 use ZnLib\Components\I18Next\Facades\I18Next;
 use ZnCore\Domain\Interfaces\Entity\EntityIdInterface;
 use ZnCore\Domain\Service\Interfaces\CrudServiceInterface;
-use ZnLib\Web\Components\TwBootstrap\Widgets\Breadcrumb\BreadcrumbWidget;
+use ZnLib\Web\TwBootstrap\Widgets\Breadcrumb\BreadcrumbWidget;
 use ZnYii\Web\Actions\CreateAction;
 use ZnYii\Web\Actions\DeleteAction;
 use ZnYii\Web\Actions\IndexAction;
