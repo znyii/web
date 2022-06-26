@@ -5,8 +5,8 @@ namespace ZnYii\Web\Libs\AdminLte3\Yii2\Widgets\Sidebar;
 use ZnCore\Domain\Entity\Helpers\CollectionHelper;
 use ZnSandbox\Sandbox\Layout\Domain\Interfaces\Services\MenuServiceInterface;
 use ZnCore\Domain\Entity\Helpers\EntityHelper;
-use ZnLib\Web\Widgets\Base\BaseWidget2;
-use ZnLib\Web\Widgets\NavbarMenuWidget;
+use ZnLib\Web\Components\Widget\Base\BaseWidget2;
+use ZnLib\Web\Components\Widget\Widgets\NavbarMenuWidget;
 
 class SidebarWidget extends BaseWidget2
 {
