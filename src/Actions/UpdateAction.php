@@ -72,7 +72,7 @@ class UpdateAction extends BaseFormAction
         $query = new Query();
         $query->with($this->with);
         /** @var EntityIdInterface $entity */
-        $entity = $this->service->oneById($id, $query);
+        $entity = $this->service->findOneById($id, $query);
         $this->runCallback([$entity]);
         return $entity;
     }

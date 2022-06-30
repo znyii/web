@@ -55,7 +55,7 @@ class Toastr extends Widget
      */
     public function run()
     {
-        $collection = $this->toastrService->all();
+        $collection = $this->toastrService->findAll();
         $this->generateHtml($collection);
     }
 
