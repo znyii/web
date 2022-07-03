@@ -2,7 +2,7 @@
 
 namespace ZnYii\Web\Widgets\Toastr;
 
-use Illuminate\Support\Collection;
+use ZnCore\Domain\Collection\Libs\Collection;
 use Symfony\Component\PropertyAccess\PropertyAccess;
 use yii\base\Widget;
 use ZnBundle\Notify\Domain\Interfaces\Services\ToastrServiceInterface;

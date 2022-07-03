@@ -3,7 +3,7 @@
 namespace ZnYii\Web\Actions;
 
 use Illuminate\Container\Container;
-use Illuminate\Support\Collection;
+use ZnCore\Domain\Collection\Libs\Collection;
 use yii\base\Model;
 use ZnCore\Base\Instance\Helpers\ClassHelper;
 use ZnCore\Base\Arr\Helpers\ArrayHelper;
