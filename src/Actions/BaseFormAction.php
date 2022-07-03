@@ -2,7 +2,7 @@
 
 namespace ZnYii\Web\Actions;
 
-use Illuminate\Container\Container;
+use ZnCore\Base\Container\Libs\Container;
 use ZnCore\Domain\Collection\Libs\Collection;
 use yii\base\Model;
 use ZnCore\Base\Instance\Helpers\ClassHelper;
