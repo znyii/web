@@ -2,6 +2,7 @@
 
 namespace ZnYii\Web\Widgets\Toastr;
 
+use ZnCore\Domain\Collection\Interfaces\Enumerable;
 use ZnCore\Domain\Collection\Libs\Collection;
 use ZnCore\Domain\Entity\Factories\PropertyAccess;
 use yii\base\Widget;
@@ -64,7 +65,7 @@ class Toastr extends Widget
         self::getToastrService()->add($type, $content, $delay);
     }
 
-    private function generateHtml(Collection $collection)
+    private function generateHtml(Enumerable $collection)
     {
         $propertyAccessor = PropertyAccess::createPropertyAccessor();
         foreach ($collection as $entity) {
