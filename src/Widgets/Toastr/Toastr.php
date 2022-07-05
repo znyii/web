@@ -2,14 +2,11 @@
 
 namespace ZnYii\Web\Widgets\Toastr;
 
-use ZnCore\Domain\Collection\Interfaces\Enumerable;
-use ZnCore\Domain\Collection\Libs\Collection;
-use ZnCore\Domain\Entity\Factories\PropertyAccess;
 use yii\base\Widget;
 use ZnBundle\Notify\Domain\Interfaces\Services\ToastrServiceInterface;
-use ZnCore\Base\Instance\Helpers\ClassHelper;
 use ZnCore\Base\Container\Helpers\ContainerHelper;
-use ZnLib\Components\I18Next\Facades\I18Next;
+use ZnCore\Domain\Collection\Interfaces\Enumerable;
+use ZnCore\Domain\Entity\Factories\PropertyAccess;
 
 class Toastr extends Widget
 {
