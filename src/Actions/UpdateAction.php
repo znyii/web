@@ -2,12 +2,12 @@
 
 namespace ZnYii\Web\Actions;
 
-use ZnCore\Base\Container\Libs\Container;
+use ZnCore\Container\Libs\Container;
 use Yii;
 use ZnBundle\Notify\Domain\Interfaces\Services\ToastrServiceInterface;
 use ZnCore\Base\Arr\Helpers\ArrayHelper;
-use ZnCore\Base\Validation\Exceptions\UnprocessibleEntityException;
-use ZnCore\Domain\Entity\Helpers\EntityHelper;
+use ZnCore\Validation\Exceptions\UnprocessibleEntityException;
+use ZnCore\Entity\Helpers\EntityHelper;
 use ZnCore\Domain\Interfaces\Entity\EntityIdInterface;
 use ZnCore\Domain\Query\Entities\Query;
 use ZnYii\Base\Enums\ScenarionEnum;

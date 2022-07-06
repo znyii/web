@@ -2,9 +2,9 @@
 
 namespace ZnYii\Web\Libs\AdminLte3\Yii2\Widgets\Sidebar;
 
-use ZnCore\Domain\Entity\Helpers\CollectionHelper;
+use ZnCore\Entity\Helpers\CollectionHelper;
 use ZnSandbox\Sandbox\Layout\Domain\Interfaces\Services\MenuServiceInterface;
-use ZnCore\Domain\Entity\Helpers\EntityHelper;
+use ZnCore\Entity\Helpers\EntityHelper;
 use ZnLib\Web\Widget\Base\BaseWidget2;
 use ZnLib\Web\TwBootstrap\Widgets\NavbarMenu\NavbarMenuWidget;
 

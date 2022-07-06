@@ -4,9 +4,9 @@ namespace ZnYii\Web\Widgets\Toastr;
 
 use yii\base\Widget;
 use ZnBundle\Notify\Domain\Interfaces\Services\ToastrServiceInterface;
-use ZnCore\Base\Container\Helpers\ContainerHelper;
-use ZnCore\Domain\Collection\Interfaces\Enumerable;
-use ZnCore\Domain\Entity\Factories\PropertyAccess;
+use ZnCore\Container\Helpers\ContainerHelper;
+use ZnCore\Collection\Interfaces\Enumerable;
+use ZnCore\Entity\Factories\PropertyAccess;
 
 class Toastr extends Widget
 {

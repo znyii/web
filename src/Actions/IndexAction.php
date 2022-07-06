@@ -5,10 +5,10 @@ namespace ZnYii\Web\Actions;
 use Yii;
 use yii\web\BadRequestHttpException;
 use ZnCore\Base\Arr\Helpers\ArrayHelper;
-use ZnCore\Base\Validation\Exceptions\UnprocessibleEntityException;
-use ZnCore\Domain\Entity\Helpers\EntityHelper;
+use ZnCore\Validation\Exceptions\UnprocessibleEntityException;
+use ZnCore\Entity\Helpers\EntityHelper;
 use ZnCore\Domain\Query\Helpers\QueryHelper;
-use ZnCore\Base\Validation\Helpers\ValidationHelper;
+use ZnCore\Validation\Helpers\ValidationHelper;
 use ZnCore\Domain\Query\Entities\Query;
 use ZnLib\Web\Controller\Helpers\WebQueryHelper;
 
