@@ -6,7 +6,7 @@ use yii\base\Widget;
 use ZnBundle\Notify\Domain\Interfaces\Services\ToastrServiceInterface;
 use ZnCore\Container\Helpers\ContainerHelper;
 use ZnCore\Collection\Interfaces\Enumerable;
-use ZnDomain\Entity\Factories\PropertyAccess;
+use ZnCore\Code\Factories\PropertyAccess;
 
 class Toastr extends Widget
 {
