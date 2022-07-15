@@ -2,7 +2,7 @@
 
 namespace ZnYii\Web\Libs\AdminLte3\Yii2\Widgets\Sidebar;
 
-use ZnDomain\Entity\Helpers\CollectionHelper;
+use ZnCore\Collection\Helpers\CollectionHelper;
 use ZnLib\Web\Menu\Domain\Interfaces\Services\MenuServiceInterface;
 use ZnDomain\Entity\Helpers\EntityHelper;
 use ZnLib\Web\Widget\Base\BaseWidget2;
