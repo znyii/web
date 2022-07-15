@@ -5,7 +5,7 @@ namespace ZnYii\Web\Actions;
 use yii\helpers\Url;
 use Yii;
 use ZnDomain\Domain\Interfaces\Entity\EntityIdInterface;
-use ZnCore\Query\Entities\Query;
+use ZnDomain\Query\Entities\Query;
 
 class ViewAction extends BaseAction
 {
